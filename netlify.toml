@@ -1,7 +1,7 @@
 [build]
-  base = "cod-manager-dashboard"
-  command = "npm install && npm run build"
-  publish = "frontend/build"
+base = "frontend" # If your frontend code is in a 'frontend' folder
+command = "npm install && npm run build"
+publish = "frontend/build"  # Ensure this matches where the 'build' folder is generated
 
 [[redirects]]
   from = "/*"
