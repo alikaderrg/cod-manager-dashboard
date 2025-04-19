@@ -1,6 +1,6 @@
-# netlify.toml
+# netlify.toml (place in root)
 [build]
-  command = "npm run build"
+  command = "cd frontend && npm install && npm run build"
   publish = "frontend/build"
 
 [[redirects]]
