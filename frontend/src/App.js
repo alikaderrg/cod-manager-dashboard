@@ -1,15 +1,28 @@
-import Dashboard from './pages/Dashboard';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/Dashboard";
+import Orders from "./pages/Orders";
+import ShopifyIntegration from "./pages/ShopifyIntegration";
+import DeliveryIntegration from "./pages/DeliveryIntegration";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <Dashboard />
-    </div>
+    <Router>
+      <div className="flex">
+        <Sidebar />
+        <div className="ml-64 p-8 w-full">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/shopify" element={<ShopifyIntegration />} />
+            <Route path="/delivery" element={<DeliveryIntegration />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
 export default App;
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  <div className="bg-white p-6 shadow-lg rounded-lg"> {/* Dashboard content here */} </div>
-  <div className="bg-white p-6 shadow-lg rounded-lg"> {/* Dashboard content here */} </div>
-</div>
